@@ -97,16 +97,19 @@ class QuestionController extends Controller
         $wrongans=0;
         $correctans=0;
         
-        $qs = Question::all();
+        //$qs = Question::all();
        // $i=0;
         //$j=$qs->count();
 
         // for($i=0;$i<$j; $i++)
         // {
-            $validation = $request->validate([
-                'ans'=>'required',
-                'dbans'=>'required',
-            ]);
+            $questions = Question::all();
+           foreach($questions as $question)
+           {
+                $validation = $request->validate([
+                   'ans'=>'required',
+                   'dbans'=>'required',
+               ]);
             // $nextq+=1;
             
             if($request->dbans == $request->ans)
@@ -125,7 +128,7 @@ class QuestionController extends Controller
             // Session::put('correctans',$correctans);
             
             return view('end',['c'=>$correctans,'w'=>$wrongans]);
-        //}
+        }
         
 
     //     $i=0;

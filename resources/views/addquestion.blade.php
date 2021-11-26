@@ -1,9 +1,14 @@
 @extends('master')
-@section('title', 'dashboard')
+@section('title', 'Add Question Page')
+@section('pagestyle')
+<style>
+  .text-color{
+            color:rgb(0, 102, 255);
+        }
+</style>
+
 @section('pagesection')
     <!-- Modal-Add -->
-    {{-- <div class="modal fade" id="Modal_add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-   aria-hidden="true"> --}}
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -21,30 +26,27 @@
             <form method="POST" action="/add">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add</h5>
-                    {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                   </button> --}}
+                    <h5 class="modal-title text-color" id="exampleModalLabel">Add Questions</h5>
                 </div>
 
                 <div class="modal-body">
                     <div class="row">
-                        <label>Question</label>
+                        <label><strong>Question</strong></label>
                     </div>
                     <div class="row">
                         <input name="question" class="form-control">
                     </div>
                     <div class="row">
-                        <div class="col-md-6"><label>A</label></div>
-                        <div class="col-md-6"><label>B</label></div>
+                        <div class="col-md-6"><label><strong>A</strong></label></div>
+                        <div class="col-md-6"><label><strong>B</strong></label></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6"><input name="opa" class="form-control"></div>
                         <div class="col-md-6"><input name="opb" class="form-control"></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6"><label>C</label></div>
-                        <div class="col-md-6"><label>D</label></div>
+                        <div class="col-md-6"><label><strong>C</strong></label></div>
+                        <div class="col-md-6"><label><strong>D</strong></label></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6"><input name="opc" class="form-control"></div>
@@ -52,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <label>Answer</label><br />
+                            <label><strong>Answer</strong></label><br />
                             <select name="ans" class="form-control">
                                 <option Value="a">A</option>
                                 <option Value="b">B</option>
@@ -63,11 +65,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                   <a href="questions"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button></a>
                     <button type="Submit" class="btn btn-primary" data-dismiss="modal">Add questions</button>
                 </div>
             </form>
         </div>
     </div>
-    {{-- </div> --}}
 @endsection

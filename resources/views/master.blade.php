@@ -7,7 +7,6 @@
     </head>
     <body>
         @yield('pagesection')
-        {{-- <button class="btn btn-primary"></button> --}}
         <script src="assets/bootstrap.min.js"></script>
     </body>
 </html>
